@@ -349,4 +349,32 @@ footer {
     .card {
         flex: 1 1 100%; /* 手機版一排一個 */
     }
+
+    .game-container {
+        padding: 20px 10px;
+        max-width: 100%;
+    }
+
+    .grid {
+        gap: 10px;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .hole {
+        height: clamp(88px, 24vw, 110px);
+        background-size: 100% auto;
+    }
+
+    .hole.has-mole,
+    .hole.has-cat {
+        background-position: center 4px, center bottom;
+        background-size: 86% auto, 100% auto;
+        transform: none;
+    }
+
+    .hole.has-mole.hit,
+    .hole.has-cat.hit {
+        background-size: 86% auto, 100% auto;
+    }
 }

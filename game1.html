@@ -1,9 +1,33 @@
-<div class="game-container">
-    <h2>🎯 課堂小遊戲：打地鼠 (<span id="score">0</span> 分)</h2>
-    <div class="grid">
-        <div class="hole" id="h0"></div><div class="hole" id="h1"></div><div class="hole" id="h2"></div>
-        <div class="hole" id="h3"></div><div class="hole" id="h4"></div><div class="hole" id="h5"></div>
-        <div class="hole" id="h6"></div><div class="hole" id="h7"></div><div class="hole" id="h8"></div>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打地鼠小遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h2>🎯 課堂小遊戲：打地鼠 (<span id="score">0</span> 分)</h2>
+        <button onclick="startGame()" class="game-btn">開始遊戲</button>
+        
+        <div class="grid">
+            <div class="hole" id="h0"></div>
+            <div class="hole" id="h1"></div>
+            <div class="hole" id="h2"></div>
+            <div class="hole" id="h3"></div>
+            <div class="hole" id="h4"></div>
+            <div class="hole" id="h5"></div>
+            <div class="hole" id="h6"></div>
+            <div class="hole" id="h7"></div>
+            <div class="hole" id="h8"></div>
+        </div>
+        
+        <br>
+        <a href="index.html" class="back-btn">⬅️ 返回作品集首頁</a>
     </div>
-    <button onclick="startGame()">開始遊戲</button>
-</div>
+
+    <script src="game1.js"></script>
+</body>
+</html>

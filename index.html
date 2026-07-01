@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的網頁設計作品集</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <nav class="navbar">
+        <div class="logo">WebDev Class</div>
+        <ul class="nav-links">
+            <li><a href="#about">關於我</a></li>
+            <li><a href="#projects">專案作品</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主視覺區 (Hero Section) -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>哈囉！我是 [學生的名字]</h1>
+            <p>歡迎來到我的網頁程式設計作品集。這裡將記錄我本學期的 5 個核心專案。</p>
+            <a href="#projects" class="btn">觀看作品</a>
+        </div>
+    </header>
+
+    <!-- 關於我與技能 -->
+    <section id="about" class="about-section">
+        <h2>關於我 / 核心技術</h2>
+        <p>目前正在學習現代網頁全端開發，目標是掌握前後端分離與雲端資料庫應用。</p>
+        <div class="skills">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3 Flexbox</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">GitHub Codespaces</span>
+        </div>
+    </section>
+
+    <!-- 專案展示區 (RWD 卡片) -->
+    <section id="projects" class="projects-section">
+        <h2>我的專案成果</h2>
+        <div class="project-grid">
+            <!-- 卡片 1 -->
+            <div class="card">
+                <div class="card-tag">專案一</div>
+                <h3>個人 RWD 作品集</h3>
+                <p>使用 HTML5、CSS3 與 Flexbox 打造的響應式個人網站，並透過 GitHub Pages 部署上線。</p>
+                <span class="status complete">已完成</span>
+            </div>
+            <!-- 卡片 2 (預留給未來的專案) -->
+            <div class="card">
+                <div class="card-tag">專案二</div>
+                <h3>互動式工具應用</h3>
+                <p>預計使用 JavaScript 進行 DOM 操作與 LocalStorage 瀏覽器暫存控制。</p>
+                <span class="status pending">規劃中</span>
+            </div>
+            <!-- 卡片 3 -->
+            <div class="card">
+                <div class="card-tag">專案三</div>
+                <h3>API 數據儀表板</h3>
+                <p>預計串接線上公開 API，並利用 Chart.js 進行動態資料圖表渲染。</p>
+                <span class="status pending">規劃中</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 HEHE's Page. Built with GitHub Codespaces.</p>
+    </footer>
+
+</body>
+</html>

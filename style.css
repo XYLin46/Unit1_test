@@ -275,35 +275,48 @@ section h2::after {
     background-image: url('gameimages/hole.png');
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 90% auto;
+    background-size: 100% auto;
     height: 120px;
     border: none;
     cursor: pointer;
     position: relative;
-    transition: all 0.2s;
+    transition: transform 0.2s;
     overflow: hidden;
 }
 
-.hole.has-mole {
-    background-image: url('gameimages/groundhog_ori.png'), url('gameimages/hole.png');
-    background-position: center 12px, center bottom;
-    background-size: 80% auto, 90% auto;
-    transform: scale(1.05);
+.hole::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center 12px;
+    background-size: 80% auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-image 0.15s ease;
 }
 
+.hole.has-mole::after {
+    background-image: url('gameimages/groundhog_ori.png');
+    opacity: 1;
+}
+
+.hole.has-cat::after {
+    background-image: url('gameimages/cat_ori.png');
+    opacity: 1;
+}
+
+.hole.has-mole.hit::after {
+    background-image: url('gameimages/groundhog_bonk.png');
+}
+
+.hole.has-cat.hit::after {
+    background-image: url('gameimages/cat_bonk.png');
+}
+
+.hole.has-mole,
 .hole.has-cat {
-    background-image: url('gameimages/cat_ori.png'), url('gameimages/hole.png');
-    background-position: center 12px, center bottom;
-    background-size: 80% auto, 90% auto;
-    transform: scale(1.05);
-}
-
-.hole.has-mole.hit {
-    background-image: url('gameimages/groundhog_bonk.png'), url('gameimages/hole.png');
-}
-
-.hole.has-cat.hit {
-    background-image: url('gameimages/cat_bonk.png'), url('gameimages/hole.png');
+    transform: none;
 }
 
 .back-btn {

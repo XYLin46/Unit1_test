@@ -1,177 +1,49 @@
-/* 基礎重設 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, sans-serif;
-}
-
-body {
-    background-color: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* 導覽列 Flex 佈局 */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #007bff;
-}
-
-/* 主視覺區 */
-.hero {
-    background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
+/* 卡片按鈕樣式 */
+.card-btn {
+    display: inline-block;
+    background-color: #007bff;
     color: white;
-    padding: 100px 10%;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    background: white;
-    color: #007bff;
-    padding: 10px 25px;
+    padding: 8px 15px;
     text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: transform 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-}
-
-/* 內容區塊通用樣式 */
-section {
-    padding: 60px 10%;
-}
-
-section h2 {
-    margin-bottom: 30px;
-    position: relative;
-}
-
-section h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background: #007bff;
-    margin-top: 8px;
-}
-
-/* 技能標籤 */
-.skills .chip {
-    display: inline-block;
-    background: #e1e7ff;
-    color: #4c6ef5;
-    padding: 5px 15px;
-    border-radius: 15px;
-    margin: 5px;
+    border-radius: 6px;
     font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: background 0.2s;
+    align-self: flex-start; /* 讓按鈕寬度隨文字長度 */
 }
 
-/* 網格系統：RWD 的關鍵 */
+.card-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 確保 6 張卡片能自動排成 3 欄、2 欄 或 1 欄 */
 .project-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-/* 卡片樣式：預設在電腦端佔 1/3 寬度 */
 .card {
     background: white;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    flex: 1 1 calc(33.333% - 20px);
-    min-width: 280px; /* 確保縮小時不會過窄 */
+    flex: 1 1 calc(33.333% - 20px); /* 電腦版一排三個 */
+    min-width: 280px; 
     display: flex;
     flex-direction: column;
 }
 
-.card-tag {
-    font-size: 0.8rem;
-    color: #aaa;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.card h3 {
-    margin-bottom: 15px;
-}
-
-.card p {
-    color: #666;
-    font-size: 0.95rem;
-    flex-grow: 1;
-    margin-bottom: 20px;
-}
-
-.status {
-    align-self: flex-start;
-    padding: 3px 10px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-}
-
-.status.complete { background: #d4edda; color: #155724; }
-.status.pending { background: #fff3cd; color: #856404; }
-
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #333;
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
-/* 📱 RWD 響應式中斷點 (手機模式) */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links li {
-        margin: 0 10px;
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
-    /* 手機上卡片撐滿 100% */
+@media (max-width: 992px) {
     .card {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 20px); /* 平板版一排兩個 */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; /* 手機版一排一個 */
     }
 }
